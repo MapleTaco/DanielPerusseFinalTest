@@ -12,7 +12,7 @@ import { AuthorizeService } from '../authorize.service';
 export class LoginComponent implements OnInit {
 
   public user: User;
-  public warning: string;
+  public error: string;
 
   constructor(private auth: AuthorizeService, private router: Router) { }
 
@@ -29,11 +29,11 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/contact-us']);
 
         }, (err) => {
-          this.warning = err.error.message;
+          this.error = err.error.message;
         }
       );
     } else {
-      this.warning = "Bonk error message";
+      this.error = "Validation Failed";
     }
   }
 

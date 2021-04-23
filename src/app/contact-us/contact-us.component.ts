@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-us',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
+
+  @Input() submit: boolean = false;
+  @Output() toScreen: EventEmitter<Boolean> = new EventEmitter();
 
   constructor() { }
 

@@ -1,21 +1,20 @@
 <h1>Final Test Website for Daniel Perusse</h1>
 <h2>Student ID: 102704194 Student Email:dperusse@myseneca.ca</h2>
 <hr>
-<h2>Login Form</h2>
+<h3>Login Page</h3>
   
-<form #f="ngForm" (ngSubmit)="onSubmit(inForm)">
+<form #inForm="ngForm" (ngSubmit)="onSubmit(inForm)">
 
-    <label class="control-label" for="name">User:</label>
-    <br>
-    <input type="text" class="form-control" id="userName" name="userName" [(ngModel)]="user.userName" autofocus>
-    <br>
-    <label class="control-label" for="name">Password:</label>
-    <br>
-    <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password">
-    <br>
-  <div class="alert alert-danger" *ngIf="warning">
-    {{warning}}
-  </div>
+    <p *ngIf="error"><b>
+        {{error}}
+    </b></p>
 
-  <button class="btn btn-primary pull-right" type="submit">Login</button>
+    <label for="name">User:</label>
+    <input type="text" id="userName" name="userName" [(ngModel)]="user.userName" autofocus>
+    <br><br>
+    <label for="name">Password:</label>
+    <input type="password" id="password" [(ngModel)]="user.password" name="password">
+    <br><br>
+
+  <button type="submit">Login</button>
 </form>
