@@ -1,1 +1,20 @@
-<p>contact-us works!</p>
+<h3>contact us</h3>
+  
+<form #inForm="ngForm" (ngSubmit)="onSubmit(inForm)">
+
+    <p *ngIf="error"><b>
+        {{error}}
+    </b></p>
+
+    <label for="name">name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="this.name" required>
+    <br><br>
+    <label for="email">email:</label>
+    <input type="text" id="email" name="email" [(ngModel)]="this.email">
+    <br><br>
+    <label for="message">message:</label>
+    <input type="text" id="message" name="message" [(ngModel)]="this.message">
+    <br><br>
+
+  <button type="submit">Send</button>
+</form>
